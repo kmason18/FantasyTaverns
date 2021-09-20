@@ -1,0 +1,69 @@
+USE RealFantasyTaverns
+
+DROP TABLE IF EXISTS Taverns;
+DROP TABLE IF EXISTS Locations;
+DROP TABLE IF EXISTS Users
+DROP TABLE IF EXISTS Roles
+DROP TABLE IF EXISTS Rats
+DROP TABLE IF EXISTS Supplies
+DROP TABLE IF EXISTS Services
+DROP TABLE IF EXISTS Sales
+
+
+CREATE TABLE Taverns(
+ID INT IDENTITY(1, 1),
+Name varchar(250),
+Floorscount varchar(250),
+OwnerID varchar(250),
+LocationID varchar(250),
+SuppliesID varchar(250),
+);
+
+CREATE TABLE locations(
+ID INT IDENTITY(2, 2),
+Name varchar(250),
+);
+
+CREATE TABLE Users(
+ID INT IDENTITY(3, 3),
+Name varchar(250),
+RoleID varchar(250),
+);
+
+CREATE TABLE Roles(
+ID INT IDENTITY(4, 4),
+Name varchar(250),
+);
+
+CREATE TABLE Rats(
+ID INT IDENTITY(5, 5),
+Name varchar(250),
+TavernID INT
+);
+
+CREATE TABLE Supplies(
+ID INT IDENTITY (6, 6),
+Name varchar(250), 
+Unit varchar(250),
+TavernID INT,
+Cost varchar(250),
+Received varchar(250),
+RcvdDate varchar(250),
+);
+
+CREATE TABLE Services(
+ID INT IDENTITY (7, 7),
+Name varchar(250),
+Status varchar(250),
+TavernID INT,
+);
+
+
+CREATE TABLE Sales(
+ID INT IDENTITY (8, 8),
+ServicesID INT,
+SuppliesID INT,
+UsersID INT,
+TavernID INT,
+);
+
