@@ -1,0 +1,78 @@
+USE RealFantasyTaverns
+
+DROP TABLE IF EXISTS Taverns;
+DROP TABLE IF EXISTS Locations;
+DROP TABLE IF EXISTS Users
+DROP TABLE IF EXISTS Class
+DROP TABLE IF EXISTS Roles
+DROP TABLE IF EXISTS Supplies
+DROP TABLE IF EXISTS Services
+DROP TABLE IF EXISTS Sales
+
+
+CREATE TABLE Taverns(
+ID INT IDENTITY(1, 1),
+Name varchar(250),
+Floorscount varchar(250),
+OwnerID varchar(250),
+LocationID varchar(250),
+SuppliesID varchar(250),
+);
+
+CREATE TABLE locations(
+ID INT IDENTITY(1, 1),
+Name varchar(250),
+);
+
+CREATE TABLE Users(
+ID INT IDENTITY(1 ,1),
+Name varchar(250),
+RoleID varchar(250),
+Note varchar(250),
+Birthday Date,
+Cakeday Date,
+Stat Varchar(250),
+classid PRIMARY KEY(1,1),
+lvlid PRIMARY KEY(1,1),
+);
+
+CREATE TABLE Class(
+ID INT IDENTITY(1, 1),
+Class varchar(250),
+Lvl varchar(250),
+);
+
+ALTER TABLE users ADD PRIMARY KEY 
+
+
+CREATE TABLE Roles(
+ID INT IDENTITY(1, 1),
+Name varchar(250),
+);
+
+CREATE TABLE Supplies(
+ID INT IDENTITY (1, 1),
+Name varchar(250), 
+Unit varchar(250),
+TavernID INT,
+Cost varchar(250),
+Received varchar(250),
+RcvdDate date,
+);
+
+CREATE TABLE Services(
+ID INT IDENTITY (1, 1),
+Name varchar(250),
+Status varchar(250),
+TavernID INT,
+);
+
+
+CREATE TABLE Sales(
+ID INT IDENTITY (1, 1),
+ServicesID INT,
+SuppliesID INT,
+UsersID INT,
+TavernID INT,
+);
+
